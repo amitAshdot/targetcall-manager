@@ -1,0 +1,150 @@
+.header {
+  padding: 3rem 0;
+  &-container {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    padding-right: 3rem;
+  }
+  &-right {
+    width: 65%;
+
+    &-logo {
+      width: 100%;
+      object-fit: contain;
+      margin-right: -1rem;
+      animation: moveInRight 0.8s;
+    }
+  }
+  &-left {
+    width: 20%;
+
+    &-logo {
+      width: 100%;
+      object-fit: contain;
+      animation: moveInRight 0.8s;
+    }
+  }
+  &-title {
+    &-light {
+      overflow-y: hidden;
+      font-weight: 100;
+      font-size: 4.5rem;
+      line-height: 3rem;
+    }
+    &-bold {
+      font-family: "adoveFnt22-bold";
+      font-size: 4.5rem;
+      line-height: 6rem;
+    }
+  }
+}
+.blue {
+  color: $color-primary-dark;
+}
+.card {
+  &__shape {
+    overflow-y: hidden;
+    width: 22rem;
+    height: 22rem;
+    float: left;
+    -webkit-shape-outside: circle(50% at 50% 50%);
+    shape-outside: circle(50% at 50% 50%);
+    -webkit-clip-path: circle(50% at 50% 50%);
+    clip-path: circle(50% at 50% 50%);
+    transform: translateX(0rem);
+    position: absolute;
+    left: 0rem;
+  }
+
+  &__header {
+    padding: 3rem 0;
+    height: 32rem;
+    position: relative;
+
+    &-title {
+      font-family: "adoveFnt22-bold";
+      font-size: 4rem;
+      line-height: 5rem;
+    }
+    &-role {
+      // font-family: "adoveFnt22-bold";
+      font-size: 2.8rem;
+    }
+    &-details {
+      position: absolute;
+      bottom: 2rem;
+    }
+  }
+  &__image {
+    width: 150%;
+    backface-visibility: hidden;
+    transform: translate(20%, -7%);
+    transition: all 0.5s;
+  }
+
+  &__text {
+    font-size: 2.6rem;
+    padding: 2rem 0;
+    border: 1px dashed;
+    border-right: navajowhite;
+    border-left: none;
+  }
+
+  &__caption {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 20%);
+    color: $color-white;
+    text-transform: uppercase;
+    font-size: 1.7rem;
+    text-align: center;
+    opacity: 0;
+    transition: all 0.5s;
+    backface-visibility: hidden;
+  }
+
+  &:hover &__caption {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+
+  &:hover &__img {
+    transform: translateX(-4rem) scale(1);
+    filter: blur(3px) brightness(80%);
+  }
+}
+
+.manager {
+  &-card {
+    padding: 0rem 3rem;
+  }
+}
+
+.pros-section {
+  &-list {
+    &__item {
+      &-smile-outer {
+        position: relative;
+        color: $color-primary-dark;
+        width: 6rem;
+        height: 3rem;
+        overflow: hidden;
+        margin-left: 5rem;
+        transition: all 0.2s;
+      }
+      &-smile-inner {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 6rem;
+        height: 6rem;
+        border-radius: 50%;
+        box-sizing: border-box;
+        border: 7px solid;
+        transition: all 0.2s;
+      }
+    }
+  }
+}

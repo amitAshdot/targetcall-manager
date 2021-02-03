@@ -1,0 +1,149 @@
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="description" content="Targetcall | make it easy" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="./css/index.css"
+      media="screen"
+    />
+    <title>Target Call | Simply better.</title>
+    <meta name="keywords" content="Targetcall, טרגטקול, טרגט קול" />
+
+    <link
+      rel="icon"
+      href="https://targetcall.co.il/wp-content/uploads/2020/10/favicon-150x150.png"
+      sizes="32x32"
+    />
+    <link
+      rel="preload"
+      as="image"
+      href="https://amitashdot.github.io/targetCall-landing/images/main-image-desktop.jpg"
+    />
+    <link
+      rel="preload"
+      as="image"
+      href="https://amitashdot.github.io/targetCall-landing/images/main-image-mobile.jpg"
+    />
+  </head>
+
+  <body>
+    <header class="header">
+      <div class="header-container">
+        <div class="header-left">
+          <img
+            class="header-left-logo"
+            src="images/page-section-icon-services.svg"
+            alt="Logo"
+          />
+        </div>
+        <div class="header-right">
+          <h2 class="header-title-light">הכירו את</h2>
+          <h2 class="header-title-bold">
+            המנהלים <span class="blue">שלנו</span>
+          </h2>
+          <img class="header-right-logo" src="images/logo.png" alt="Logo" />
+        </div>
+      </div>
+    </header>
+    <main>
+      <!-- MAIN HEADER START -->
+
+      <div class="manager-card">
+        <div class="card__header">
+          <figure class="card__shape">
+            <img
+              src="./images/תאיר דהן מנהלת מוקד שופרסל.jpg"
+              alt="מנהל/ת"
+              class="card__image"
+            />
+          </figure>
+       
+          <div class="card__header-details">
+              <div class="pros-section-list__item-smile-outer">
+                <div class="pros-section-list__item-smile-inner"></div>
+              </div>
+            <h3 class="card__header-title">
+              תאיר דהן
+            </h3>
+            <p class="card__header-role blue">מנהלת מוקד שופרסל</p>
+          </div>
+        </div>
+        <div class="card__text">
+          <p>
+            תאיר היא מנהלת נחושה וחדה שכל עובד היה רוצה להיות לצידה. באקסל היא
+            לא מפספסת מספר, היא מאמינה בדרך ולא טיול קצר. לפני שתפליגו אל
+            אוקינוס עיניה היפות, תאיר תדאג שתביאו תוצאות - כי באמת שמדבר באדם
+            מדהים, לא סתם היא הפייבוריט על כל העובדים. אז בואו לראיון ותכירו את
+            תאיר, ספרו לה איך ניחנתם בכשרון נדיר. תצטרפו למשפחה, תפרדו מהשעמום,
+            וברוכים הבאים למוקד הכי שמח ביקום. 
+          </p>
+        </div>
+      </div>
+
+    <script>
+      // Helper function from: http://stackoverflow.com/a/7557433/274826
+      const isElementInViewport = el => {
+        const pixFromElementTop = 1;
+        // special bonus for those using jQuery
+        if (typeof jQuery === "function" && el instanceof jQuery) {
+          el = el[0];
+        }
+        let rect = el.getBoundingClientRect();
+        return (
+          (rect.top + pixFromElementTop <= 0 && rect.bottom >= 0) ||
+          (rect.bottom + pixFromElementTop >=
+            (window.innerHeight || document.documentElement.clientHeight) &&
+            rect.top + pixFromElementTop <=
+              (window.innerHeight || document.documentElement.clientHeight)) ||
+          (rect.top + pixFromElementTop >= 0 &&
+            rect.bottom + pixFromElementTop <=
+              (window.innerHeight || document.documentElement.clientHeight))
+        );
+      };
+      // Detect request animation frame
+      let scroll =
+        window.requestAnimationFrame ||
+        // IE Fallback
+        function(callback) {
+          window.setTimeout(callback, 1000 / 60);
+        };
+      let elementsToShow = document.querySelectorAll(".show-on-scroll");
+
+      const loop = () => {
+        Array.prototype.forEach.call(elementsToShow, function(element) {
+          if (isElementInViewport(element)) {
+            element.classList.add("is-visible");
+          } else {
+            element.classList.remove("is-visible");
+          }
+        });
+
+        scroll(loop);
+      };
+
+      // Call the loop for the first time
+      loop();
+
+      //get url params
+      const queryString = window.location.search;
+      const urlParams = new URLSearchParams(queryString);
+      const locationNum = urlParams.get("locationNum");
+      const site = urlParams.get("site");
+      const from = urlParams.get("from");
+      let inputLocation = document.getElementsByClassName("systemfield12");
+      let inputSite = document.getElementsByClassName("systemfield52");
+      let inputFrom = document.getElementsByClassName("originatingleadcode");
+
+      let locationArray = [...inputLocation];
+      let siteArray = [...inputSite];
+      let fromArray = [...inputFrom];
+      locationArray.map(item => (item.value = locationNum));
+      siteArray.map(item => (item.value = site));
+      fromArray.map(item => (item.value = from));
+    </script>
+  </body>
+</html>
